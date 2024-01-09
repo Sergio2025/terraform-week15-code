@@ -17,17 +17,15 @@ pipeline {
                 sh 'terraform validate'
             }
         }
-     
         stage('plan') {
             steps {
                 sh 'terraform plan'
             }
         }
-
-         stage('apply') {
+        stage('apply') {
             steps {
                 sh 'terraform apply --auto-approve'
             }
         }
+    }
 }
-
